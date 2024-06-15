@@ -1,3 +1,5 @@
 ﻿# 21BITV02
 
-## Seri các bài lab trên lớp theo ngày
+# Buổi 02 - 15/06/2024
+
+![Alt text](./BaiTap.png "Bài tập 01")
