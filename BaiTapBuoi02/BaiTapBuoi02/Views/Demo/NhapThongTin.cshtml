@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Nhập thông tin";
+}
+
+<h1>Nhập thông tin</h1>
+<form asp-action="KetQua" asp-controller="Demo">
+    <div class="mb-3">
+        <label for="HoTen" class="form-label">Họ tên</label>
+        <input type="text" class="form-control" id="HoTen" name="HoTen">
+    </div>
+    <div class="mb-3">
+        <label for="NamSinh" class="form-label">Năm sinh</label>
+        <input type="number" min="1900" class="form-control" id="NamSinh" name="NamSinh">
+    </div>
+    <button type="submit" class="btn btn-primary">Gửi</button>
+</form>
+

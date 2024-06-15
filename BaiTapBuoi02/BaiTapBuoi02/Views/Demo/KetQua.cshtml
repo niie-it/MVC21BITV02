@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewData["Title"] = "KetQua";
+}
+
+<h1>Kết quả</h1>
+<div>Họ tên: @ViewBag.HoTen</div>
+<div>Năm sinh: @ViewBag.NamSinh</div>
+<div>Tuổi: @(DateTime.Now.Year - ViewBag.NamSinh)</div>
+<a asp-action="NhapThongTin">Trở lại</a>
