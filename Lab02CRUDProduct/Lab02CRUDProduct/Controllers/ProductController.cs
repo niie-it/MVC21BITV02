@@ -17,16 +17,30 @@ namespace Lab02CRUDProduct.Controllers
 			return View(products);
 		}
 
+		[HttpGet]
 		public IActionResult Edit(int id)
 		{
 			var existedProduct = GetProduct(id);
-			return View();
+			return View(existedProduct);
 		}
+
+		[HttpPost]
+		public IActionResult Edit(Product product)
+		{
+			var existedProduct = GetProduct(product.ID);
+			if (existedProduct != null)
+			{
+				existedProduct.Name = product.Name;
+				existedProduct.Price = product.Price;
+			}
+			return RedirectToAction("Index");
+		}
+
 
 		public IActionResult Delete(int proid)
 		{
 			var existedProduct = GetProduct(proid);
-			if(existedProduct != null)
+			if (existedProduct != null)
 			{
 				products.Remove(existedProduct);
 			}
