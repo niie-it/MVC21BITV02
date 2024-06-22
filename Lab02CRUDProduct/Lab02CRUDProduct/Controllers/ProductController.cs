@@ -51,5 +51,28 @@ namespace Lab02CRUDProduct.Controllers
 		{
 			return products.SingleOrDefault(p => p.ID == id);
 		}
+
+		[HttpGet]
+		public IActionResult Create()
+		{
+			return View();
+		}
+
+		[HttpPost]
+		public IActionResult Create(Product product)
+		{
+			var existedProduct = GetProduct(product.ID);
+			if (existedProduct == null)
+			{
+				products.Add(product);
+				TempData["Message"] = "Thêm mới thành công";
+			}
+			else
+			{
+				ViewBag.Message = $"Mã {product.ID} đã có";
+				return View();
+			}
+			return RedirectToAction("Index");
+		}
 	}
 }
