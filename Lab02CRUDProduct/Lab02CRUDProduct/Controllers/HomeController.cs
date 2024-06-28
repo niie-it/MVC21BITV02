@@ -18,6 +18,21 @@ namespace Lab02CRUDProduct.Controllers
 			return View();
 		}
 
+		public IActionResult Demo()
+		{
+			return View();
+		}
+
+		public IActionResult BangCuuChuong()
+		{
+			return View();
+		}
+
+		public IActionResult Vietlott()
+		{
+			return View();
+		}
+
 		public IActionResult Privacy()
 		{
 			return View();

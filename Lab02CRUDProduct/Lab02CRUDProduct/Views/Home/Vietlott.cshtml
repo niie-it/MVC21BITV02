@@ -1,0 +1,28 @@
+﻿@{
+	ViewData["Title"] = "Vietlott";
+}
+
+<h1>Vietlott</h1>
+
+@{
+	var rd = new Random();
+	var mangSo = new List<int>();
+	while (mangSo.Count < 6)
+	{
+		var randNum = rd.Next(1, 46);
+		if(!mangSo.Contains(randNum))
+		{
+			mangSo.Add(randNum);
+		}
+	}
+	mangSo.Sort();
+	var mangChuoiSo = mangSo.Select(p => p.ToString("00"));
+}
+
+<style>
+	.vongtron{width:30px; height: 30px; border-radius:15px; border: 1px solid red; text-align: center; display:inline-block;}
+</style>
+@foreach(var item in mangChuoiSo)
+{
+	<div class="vongtron">@item</div>
+}

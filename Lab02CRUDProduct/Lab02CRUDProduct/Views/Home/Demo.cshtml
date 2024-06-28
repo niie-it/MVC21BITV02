@@ -1,0 +1,43 @@
+﻿@{
+	ViewData["Title"] = "Demo";
+}
+
+<h1>Demo</h1>
+
+@{
+	
+}
+
+<div>@Html.SayHello()</div>
+<div>@Html.SayHello("Lý Tý")</div>
+@{ int nam = 2025;}
+<div>Còn @(nam.NgayConLai()) ngày tới tết</div>
+
+@{
+	var block = @"<div><h2>IP15</h2></div>";
+}
+
+<div>@block</div>
+<div>@Html.Raw(block)</div>
+
+<div>Để nhập liệu html thì dùng editor: summernote, ckeditor5,...</div>
+
+@if(5 < 9){
+	var chuoi = "5 nhỏ hơn 9";
+	<span>@chuoi</span>
+}
+@if (5 < 9)
+{
+	var chuoi = "5 nhỏ hơn 9";
+	@:chuoi hiển thị
+}
+
+@{
+	var tuoiCuaThien = 22;
+}
+<div>Còn @(30 - tuoiCuaThien) năm nữa Thiện sẽ giàu.</div>
+
+<!-- Ghi chú HTML -->
+@*
+	Ghi chú trên server
+*@
