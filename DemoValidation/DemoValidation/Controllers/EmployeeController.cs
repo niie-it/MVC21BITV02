@@ -5,7 +5,17 @@ namespace DemoValidation.Controllers
 {
 	public class EmployeeController : Controller
 	{
-		public IActionResult Register()
+		public IActionResult CheckExistedEmployee(string EmployeeNo)
+		{
+			var dsMaNV = new List<string> { "admin", "tep" };
+			if (dsMaNV.Contains(EmployeeNo))
+			{
+				return Json($"Mã <b>{EmployeeNo}</b> đã có");
+			}
+			return Json(true);
+		}
+
+        public IActionResult Register()
 		{
 			return View();
 		}
