@@ -7,16 +7,38 @@
 	<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 	@RenderSection("Styles", required: false)
 	<style>
-		#myheader{height: 100px; background-color: cyan;}
-		#myfooter{border: 1px solid red; text-align:center;}
-		.min-height-400{min-height:400px;}
+		#myheader {
+			height: 100px;
+			background-color: cyan;
+		}
+
+		#myfooter {
+			border: 1px solid red;
+			text-align: center;
+		}
+
+		.min-height-400 {
+			min-height: 400px;
+		}
 	</style>
 </head>
 <body>
 	<div class="container">
 		<div id="myheader">#HEADER</div>
 		<div class="row m-0">
-			<aside class="col-3 min-height-400 bg-gradient">#MENU</aside>
+			<aside class="col-3 min-height-400 bg-gradient">
+				#MENU
+				<style>
+					li.list-group-item > a{
+						text-decoration:none;
+					}
+
+					li.list-group-item > a:hover{color:red; font-weight:bolder;}
+				</style>
+				
+				@await Html.PartialAsync("_ProductMenu")
+				@await Html.PartialAsync("_ProductMenu")
+			</aside>
 			<div class="col-9 min-height-400 bg-light">
 				@RenderBody()
 			</div>
