@@ -20,6 +20,9 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="wwwroot\Images\Categories\" />
+    <Folder Include="wwwroot\Images\Products\" />
+    <Folder Include="wwwroot\Images\Suppliers\" />
   </ItemGroup>
 
 </Project>
