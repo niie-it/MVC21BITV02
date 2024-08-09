@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Demo AJAX</h1>
+<div>Bây giờ là: <span class="text-danger" id="dongho"></span></div>
+
+@section Scripts{
+    <script>
+        function layGioServer() {
+            $.ajax({
+                url: "/Ajax/ServerTime",
+                success: function (response) {
+                    $("#dongho").html(response);
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            layGioServer();
+            setInterval(layGioServer, 1000);
+        });
+    </script>
+}

@@ -1,0 +1,28 @@
+﻿@{
+	ViewData["Title"] = "Search";
+}
+
+<h1>Search</h1>
+
+<fieldset>
+	<legend>Find what?</legend>
+	<input id="findword" />
+</fieldset>
+<div id="result"></div>
+@section Scripts {
+	<script>
+		$(document).ready(function () {
+			//gắn sự kiện keyup cho thẻ input
+			$("#findword").keyup(function () {
+				$.ajax({
+					url: "/Ajax/Search",
+					type: "POST",
+					data: { keyword: $(this).val() },
+					success: function (response) {
+						$("#result").html(response);
+					}
+				});
+			});
+		});
+	</script>
+}
